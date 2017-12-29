@@ -1,0 +1,14 @@
+version: '3'
+services:
+  swagger-ui:
+    build: ./containers/swagger-ui
+    ports:
+      - "50000:8080"
+    links:
+      - swagger-editor
+    depends_on:
+      - swagger-editor
+  swagger-editor:
+    build: ./containers/swagger-editor
+    ports:
+      - "50001:8080"
